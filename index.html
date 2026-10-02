@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Personagem pelo Signo e Decanato</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-no-repeat bg-[url('assets/bg/Umamusume-Pretty-Derby-1-1.webp')]">
+
+    <div class="flex flex-col justify-center items-center min-h-screen bg-slate-900/80 p-4">
+
+        <h1 class="text-3xl text-white font-bold text-center">
+            Descubra seu Personagem
+        </h1>
+
+        <div class="flex gap-4 my-8">
+
+            <div>
+                <h2 class="font-bold uppercase text-white text-center mb-2"> Escolha seu mês </h2>
+                <select id="mes" class="border-2 border-white w-48 text-white bg-slate-800 p-2 rounded cursor-pointer">
+                    <!-- Preenchido via JS -->
+                </select>
+            </div>
+
+            <div>
+                <h2 class="font-bold uppercase text-white text-center mb-2"> Escolha seu dia </h2>
+                <select id="dia" class="border-2 border-white w-28 text-white bg-slate-800 p-2 rounded cursor-pointer">
+                    <!-- Preenchido via JS -->
+                </select>
+            </div>
+        </div>
+
+        <button onclick="descobrirNome()" class="leading-10 bg-white hover:bg-red-600 hover:text-white font-semibold rounded-full px-10 cursor-pointer transition duration-200 shadow-lg">
+            Descubra
+        </button>
+
+    </div>
+
+    <!-- Modal / Pop-up -->
+    <div id="modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-slate-800 text-white rounded-2xl p-6 max-w-sm w-full text-center border-2 border-red-500 shadow-2xl relative flex flex-col items-center">
+            
+            <span id="signo-tag" class="text-xs uppercase font-bold tracking-widest text-red-400 mb-1"></span>
+            <h2 id="modal-titulo" class="text-2xl font-black text-white"></h2>
+            <p id="decanato-nome" class="text-sm italic text-gray-300 mb-4"></p>
+
+            <img id="modal-imagem" src="" alt="Personagem" class="w-48 h-48 object-cover rounded-xl border-2 border-slate-700 mb-4 shadow-md">
+
+            <p id="modal-descricao" class="text-sm text-gray-200 leading-relaxed mb-6"></p>
+
+            <button onclick="fecharModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl transition cursor-pointer">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
